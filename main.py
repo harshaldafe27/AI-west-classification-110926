@@ -5,13 +5,16 @@ import mimetypes
 import os
 
 import requests
+from dotenv import load_dotenv
 from flask import Flask, jsonify, request
+
+load_dotenv()
 
 invoke_url = "https://integrate.api.nvidia.com/v1/chat/completions"
 stream = False
 
 headers = {
-    "Authorization": "Bearer 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",
+    "Authorization": f"Bearer {os.environ.get('NVIDIA_API_KEY', '')}",
     "Accept": "text/event-stream" if stream else "application/json",
 }
 
