@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Camera, Check, Copy, Download, FileImage, Info, Leaf, LoaderCircle, Upload, X } from 'lucide-react'
+import WasteDistributionChart from './components/WasteDistributionChart'
 
 const columns = [
   ['Item_Description', 'Item'],
@@ -420,8 +421,10 @@ function App() {
               </div>
             )
           ) : (
-            <div id="results-table-wrap" className="table-wrap">
-              <table id="classification-table">
+            <>
+              <WasteDistributionChart rows={rows} />
+              <div id="results-table-wrap" className="table-wrap">
+                <table id="classification-table">
                 <thead>
                   <tr>{columns.map(([, label]) => <th key={label}>{label}</th>)}</tr>
                 </thead>
@@ -451,7 +454,8 @@ function App() {
                 </tbody>
               </table>
             </div>
-          )}
+          </>
+        )}
         </div>
       </section>
 

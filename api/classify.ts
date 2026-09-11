@@ -2,8 +2,6 @@ import { createApiApp } from '../server/app.js';
 
 const app = createApiApp();
 
-// Vercel Serverless Function configuration
-// Disable built-in body parsing so Multer can process multipart/form-data directly
 export const config = {
   api: {
     bodyParser: false,
@@ -12,4 +10,3 @@ export const config = {
 };
 
 export default app;
-
