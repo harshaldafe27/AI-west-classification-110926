@@ -18,5 +18,5 @@
     "allowJs": true,
     "esModuleInterop": true
   },
-  "include": ["src", "server.ts", "vite.config.js"]
+  "include": ["src", "server.ts", "vite.config.js", "api"]
 }

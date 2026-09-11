@@ -1,6 +1,6 @@
 {
   "name": "Waste Lens",
   "description": "AI waste classification workspace that classifies visible materials from images into actionable breakdowns.",
-  "requestFramePermissions": [],
+  "requestFramePermissions": ["camera"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

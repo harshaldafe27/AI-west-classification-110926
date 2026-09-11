@@ -8,6 +8,16 @@
     <meta name="description" content="AI waste classification workspace that classifies visible materials from images into actionable breakdowns." />
     <meta property="og:title" content="Waste Lens" />
     <meta property="og:description" content="AI waste classification workspace that classifies visible materials from images into actionable breakdowns." />
+    <script>
+      // Prevent benign sandbox Vite HMR WebSocket disconnect messages from triggering uncaught rejection overlays
+      window.addEventListener('unhandledrejection', function(event) {
+        var reason = event && event.reason;
+        var msg = (reason && (reason.message || reason.toString())) || '';
+        if (msg.indexOf('WebSocket closed without opened') !== -1 || msg.indexOf('failed to connect to websocket') !== -1) {
+          event.preventDefault();
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
