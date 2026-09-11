@@ -83,7 +83,7 @@ export function createApiApp() {
   const app = express();
   app.use(express.json());
 
-  app.get(['/api/health', '/health', '/api', '/'], (_req, res) => {
+  app.get(['/api/health', '/health'], (_req, res) => {
     res.json({
       status: 'ok',
       hasGeminiKey: Boolean(process.env.GEMINI_API_KEY),
@@ -91,7 +91,7 @@ export function createApiApp() {
     });
   });
 
-  app.post(['/api/classify', '/classify', '/api', '/'], upload.single('image'), async (req, res) => {
+  app.post(['/api/classify', '/classify'], upload.single('image'), async (req, res) => {
     const file = req.file;
     if (!file) {
       return res.status(400).json({ error: 'Please upload an image.' });
